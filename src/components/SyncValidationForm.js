@@ -15,14 +15,19 @@ const SyncValidationForm = (props) => {
                     <Field name="name" label="Name" component={Input} type="text" />
                     <Field name="age" label="Age" component={Input} type="text" />
                     <FormSection name="hobbies">
-                    {
-                        checkOpts.map(data => <Field  id={data}
-                                                    key={data}
-                                                    name={data} 
-                                                    label={data}
-                                                    type="checkbox" 
-                                                    component={Checkbox} />)
-                    }
+                        <div className="field is-grouped is-grouped-centered">
+                            {
+                                checkOpts.map((data, i) =>
+                                    <Field id={data}
+                                        key={data}
+                                        name={data}
+                                        label={data}
+                                        type="checkbox"
+                                        component={Checkbox}
+                                    />
+                                )
+                            }
+                        </div>
                     </FormSection>
                     <FormButtons pristine={pristine} submittingHandle={submitting} reset={() => reset()} />
                 </form>
