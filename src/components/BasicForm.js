@@ -24,7 +24,7 @@ const BasicForm = (props) => {
             /> */}
                     <Field name="name" label="Nombre" component={Input} type="text" validate={[maxLength, required]} />
                     <Field name="lastName" label="Apellido" component={Input} type="text" validate={maxLength} />
-                    <FormButtons submittingHandle={submitting} onResetHandle={reset} />
+                    <FormButtons submittingHandle={submitting} reset={() => reset()} />
                 </form>
             </div>
         </div>

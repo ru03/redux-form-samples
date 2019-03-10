@@ -3,7 +3,8 @@ import React from 'react';
 const Code = ({ value }) => (
     <code>
         {value}
-    </code>
+    </code >
 )
+
 
 export default Code;

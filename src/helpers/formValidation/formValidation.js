@@ -12,5 +12,15 @@ export default (values) => {
         errors.email = 'Email is invalid';
     }
 
+    if (!values.age) {
+        errors.age = 'Age is required';
+    } else if (isNaN(values.age)) {
+        errors.age = 'Age must be a number';
+    }
+
+    if (values.age < 18) {
+        errors.age = 'You are under 18';
+    }
+
     return errors;
 }
