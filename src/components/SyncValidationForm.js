@@ -8,7 +8,6 @@ import { syncValidators } from './../helpers/formValidation';
 
 const SyncValidationForm = (props) => {
     const { checkOpts, handleSubmit, reset, submitting, pristine, hasHobbie } = props;
-    console.log(hasHobbie)
     return (
         <div className="columns">
             <div className="column is-half is-offset-one-quarter">
