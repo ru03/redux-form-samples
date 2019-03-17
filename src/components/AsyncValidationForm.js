@@ -4,7 +4,6 @@ import Input from './UI/Input/Input';
 import FormButtons from './UI/FormButtons/FormButtons';
 
 const AsyncValidationForm = ({ handleSubmit, reset , error, submitHandle}) => {
-    console.log(error);
     return (
     <div className="columns">
         <div className="column is-half is-offset-one-quarter">
