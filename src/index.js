@@ -1,17 +1,20 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux'
-import { createStore, combineReducers, compose } from 'redux';
+import { applyMiddleware, createStore, combineReducers, compose } from 'redux';
 import { reducer as reduxFormReducer } from 'redux-form';
+import thunk from 'redux-thunk';
+import formReducer from './state/form/reducer';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const reducer = combineReducers({
-    form: reduxFormReducer
+    form: reduxFormReducer,
+    formikRedux: formReducer,
 })
-const store = createStore(reducer, composeEnhancers());
+const store = createStore(reducer, composeEnhancers(applyMiddleware(thunk)));
 const app = (
     <Provider store={store}>
         <App />
